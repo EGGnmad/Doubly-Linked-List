@@ -37,9 +37,7 @@ void insertNode(LinkedList *list, struct node* node){
 // O(1)
 void removeNode(LinkedList *list){
 
-
     list->head = list->head->next;
-
     list->head->previous = NULL;
 
     // resize
@@ -64,3 +62,17 @@ struct node* getNode(LinkedList *list, int index){
         return cnode;
     }
 }
+
+// O(n)
+int containsNode(LinkedList *list, struct node* node){
+    struct node* cnode = list->head;
+    for(int i = 0; i < list->size -1; i++){
+        if(cnode->v == node->v)
+            return 1;
+        cnode = cnode->next;
+        if(cnode->v == node->v)
+            return 1;
+    }
+    return 0;
+}
+

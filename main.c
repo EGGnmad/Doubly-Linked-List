@@ -7,7 +7,7 @@ int main(){
     insertNode(list, newNode(2));
     insertNode(list, newNode(1));
 
-    printf("%d", getNode(list, 0)->v);
+    printf("%d",  );
 
     return 0;
 }
